@@ -53,13 +53,13 @@ interface Options {
   }
 }
 
-const pebblenetGasPrice = GasPrice.fromString("0.01upebble");
+const pebblenetGasPrice = GasPrice.fromString("0.01ufury");
 const pebblenetOptions: Options = {
-  httpUrl: 'https://rpc.pebblenet.cosmwasm.com',
-  networkId: 'pebblenet-1',
-  bech32prefix: 'wasm',
-  feeToken: 'upebble',
-  faucetUrl: 'https://faucet.pebblenet.cosmwasm.com/credit',
+  httpUrl: 'https://rpc.furya.xyz',
+  networkId: 'fury-1',
+  bech32prefix: 'fury',
+  feeToken: 'ufury',
+//   faucetUrl: 'https://faucet.pebblenet.cosmwasm.com/credit',
   hdPath: makeCosmoshubPath(0),
   defaultKeyFile: path.join(process.env.HOME, ".pebblenet.key"),
   fees: {
@@ -68,6 +68,7 @@ const pebblenetOptions: Options = {
     exec: calculateFee(200000, pebblenetGasPrice),
   },
 }
+
 
 interface Network {
   setup: (password: string, filename?: string) => Promise<[string, SigningCosmWasmClient]>
